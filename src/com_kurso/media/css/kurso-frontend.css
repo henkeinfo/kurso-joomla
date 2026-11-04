@@ -1,0 +1,31 @@
+/* KURSO for Joomla – frontend styles. Minimal on purpose and easy to override in the site template. */
+
+/* The wrapper of every KURSO output. Tables adapt to the width of their container (e.g. a sidebar module). */
+.kurso { container-type: inline-size; max-width: 100%; overflow-x: auto; }
+.kurso-table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+.kurso-table th, .kurso-table td { padding: 10px 12px; border-bottom: 1px solid #e2e8f0; text-align: left; vertical-align: top; }
+.kurso-table th { background: #f8fafc; font-weight: 600; }
+.kurso-table tr:hover td { background: #f8fafc; }
+
+.kurso-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; margin: 1em 0; }
+.kurso-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; }
+.kurso-card__title { margin: 0 0 .5rem; font-size: 1.1rem; }
+.kurso-card__date, .kurso-card__location, .kurso-card__capacity { margin: .25rem 0; color: #64748b; font-size: .9rem; }
+
+.kurso-button { display: inline-block; padding: 8px 18px; background: #2563eb; color: #fff; border-radius: 5px; text-decoration: none; font-size: .9rem; transition: background .2s; }
+.kurso-button:hover, .kurso-button:focus { background: #1d4ed8; color: #fff; }
+.kurso-button--large { padding: 12px 28px; font-size: 1rem; }
+
+.kurso-detail dl { display: grid; grid-template-columns: max-content 1fr; gap: .25rem 1rem; margin: 1em 0; }
+.kurso-detail dt { font-weight: 600; color: #475569; }
+.kurso-ausgebucht { color: #dc2626; font-weight: 600; }
+
+.kurso-badge--voll { background: #fee2e2; color: #dc2626; display: inline-block; padding: 2px 10px; border-radius: 3px; font-size: .85rem; }
+.kurso-coursetype { margin-bottom: 2em; }
+
+@container (max-width: 640px) {
+  .kurso-table thead { display: none; }
+  .kurso-table, .kurso-table tbody, .kurso-table tr, .kurso-table td { display: block; width: 100%; }
+  .kurso-table tr { border-bottom: 1px solid #e2e8f0; padding: .5rem 0; }
+  .kurso-table td { border: 0; padding: .25rem 0; }
+}

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<fieldset
+		name="frontend"
+		label="COM_KURSO_CONFIG_FRONTEND_LABEL"
+		>
+		<field
+			name="load_css"
+			type="radio"
+			label="COM_KURSO_CONFIG_LOAD_CSS_LABEL"
+			description="COM_KURSO_CONFIG_LOAD_CSS_DESC"
+			layout="joomla.form.field.radio.switcher"
+			default="1"
+			filter="integer"
+			>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+
+		<field
+			name="filter_output"
+			type="radio"
+			label="COM_KURSO_CONFIG_FILTER_OUTPUT_LABEL"
+			description="COM_KURSO_CONFIG_FILTER_OUTPUT_DESC"
+			layout="joomla.form.field.radio.switcher"
+			default="1"
+			filter="integer"
+			>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+
+		<field
+			name="show_errors"
+			type="list"
+			label="COM_KURSO_CONFIG_SHOW_ERRORS_LABEL"
+			description="COM_KURSO_CONFIG_SHOW_ERRORS_DESC"
+			default="managers"
+			validate="options"
+			>
+			<option value="managers">COM_KURSO_CONFIG_SHOW_ERRORS_MANAGERS</option>
+			<option value="nobody">COM_KURSO_CONFIG_SHOW_ERRORS_NOBODY</option>
+		</field>
+	</fieldset>
+
+	<fieldset
+		name="data"
+		label="COM_KURSO_CONFIG_DATA_LABEL"
+		>
+		<field
+			name="page_view_refresh"
+			type="radio"
+			label="COM_KURSO_CONFIG_PAGE_VIEW_REFRESH_LABEL"
+			description="COM_KURSO_CONFIG_PAGE_VIEW_REFRESH_DESC"
+			layout="joomla.form.field.radio.switcher"
+			default="1"
+			filter="integer"
+			>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+
+		<field
+			name="http_timeout"
+			type="number"
+			label="COM_KURSO_CONFIG_HTTP_TIMEOUT_LABEL"
+			description="COM_KURSO_CONFIG_HTTP_TIMEOUT_DESC"
+			default="15"
+			min="3"
+			max="120"
+			step="1"
+			filter="integer"
+			validate="number"
+		/>
+	</fieldset>
+
+	<fieldset
+		name="permissions"
+		label="JCONFIG_PERMISSIONS_LABEL"
+		description="JCONFIG_PERMISSIONS_DESC"
+		>
+		<field
+			name="rules"
+			type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			validate="rules"
+			filter="rules"
+			component="com_kurso"
+			section="component"
+		/>
+	</fieldset>
+</config>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="component" method="upgrade">
+	<name>com_kurso</name>
+	<author>KURSO</author>
+	<creationDate>2026-11</creationDate>
+	<copyright>(C) 2026 KURSO</copyright>
+	<license>MIT; see LICENSE</license>
+	<authorUrl>https://www.kurso.de</authorUrl>
+	<version>1.0.0</version>
+	<description>COM_KURSO_XML_DESCRIPTION</description>
+	<namespace path="src">Kurso\Component\Kurso</namespace>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+			<file driver="postgresql" charset="utf8">sql/install.postgresql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+			<file driver="postgresql" charset="utf8">sql/uninstall.postgresql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+			<schemapath type="postgresql">sql/updates/postgresql</schemapath>
+		</schemas>
+	</update>
+
+	<files folder="site">
+		<folder>language</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<media destination="com_kurso" folder="media">
+		<filename>joomla.asset.json</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
+
+	<administration>
+		<menu img="class:calendar">COM_KURSO</menu>
+		<submenu>
+			<menu link="option=com_kurso&amp;view=queries" view="queries">COM_KURSO_MENU_QUERIES</menu>
+			<menu link="option=com_kurso&amp;view=connection" view="connection">COM_KURSO_MENU_CONNECTION</menu>
+		</submenu>
+		<files folder="administrator">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<folder>forms</folder>
+			<folder>language</folder>
+			<folder>services</folder>
+			<folder>sql</folder>
+			<folder>src</folder>
+			<folder>tmpl</folder>
+			<folder>vendor</folder>
+		</files>
+	</administration>
+</extension>

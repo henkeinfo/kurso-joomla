@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer:v2
+
+      - name: Check that the tag matches the package version
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          grep -q "<version>${VERSION}</version>" src/pkg_kurso/pkg_kurso.xml \
+            || { echo "Tag ${GITHUB_REF_NAME} does not match the version in src/pkg_kurso/pkg_kurso.xml"; exit 1; }
+
+      - name: Lint PHP
+        run: find src -name '*.php' -not -path '*/vendor/*' -print0 | xargs -0 -n1 php -l > /dev/null
+
+      - name: Build package
+        run: bin/build.sh
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/pkg_kurso-*.zip
+          generate_release_notes: true
+          # Tags with a suffix (v1.0.0-rc.0, v2.0.0-beta.1) become pre-releases
+          prerelease: ${{ contains(github.ref_name, '-') }}

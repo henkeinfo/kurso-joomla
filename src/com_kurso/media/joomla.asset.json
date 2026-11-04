@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "com_kurso",
+  "version": "1.0.0",
+  "description": "KURSO for Joomla",
+  "license": "MIT",
+  "assets": [
+    {
+      "name": "com_kurso.frontend",
+      "type": "style",
+      "uri": "com_kurso/kurso-frontend.css",
+      "version": "auto"
+    },
+    {
+      "name": "com_kurso.admin",
+      "type": "style",
+      "uri": "com_kurso/kurso-admin.css",
+      "version": "auto"
+    },
+    {
+      "name": "com_kurso.admin-copy",
+      "type": "script",
+      "uri": "com_kurso/admin-copy.js",
+      "version": "auto",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "type": "module"
+      }
+    },
+    {
+      "name": "com_kurso.admin-queries",
+      "type": "script",
+      "uri": "com_kurso/admin-queries.js",
+      "version": "auto",
+      "dependencies": [
+        "core",
+        "com_kurso.admin-copy"
+      ],
+      "attributes": {
+        "type": "module"
+      }
+    },
+    {
+      "name": "com_kurso.admin-query-edit",
+      "type": "script",
+      "uri": "com_kurso/admin-query-edit.js",
+      "version": "auto",
+      "dependencies": [
+        "core",
+        "editor-api",
+        "com_kurso.admin-copy"
+      ],
+      "attributes": {
+        "type": "module"
+      }
+    },
+    {
+      "name": "com_kurso.admin-connection",
+      "type": "script",
+      "uri": "com_kurso/admin-connection.js",
+      "version": "auto",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "type": "module"
+      }
+    },
+    {
+      "name": "com_kurso.admin-select",
+      "type": "script",
+      "uri": "com_kurso/admin-select.js",
+      "version": "auto",
+      "attributes": {
+        "type": "module"
+      }
+    },
+    {
+      "name": "@codemirror/lang-kursographql",
+      "type": "script",
+      "uri": "com_kurso/codemirror-lang-kursographql.js",
+      "version": "auto",
+      "importmap": true,
+      "dependencies": [
+        "@codemirror/language"
+      ]
+    },
+    {
+      "name": "@codemirror/lang-kursotwig",
+      "type": "script",
+      "uri": "com_kurso/codemirror-lang-kursotwig.js",
+      "version": "auto",
+      "importmap": true,
+      "dependencies": [
+        "@codemirror/language",
+        "@codemirror/view",
+        "@codemirror/lang-html"
+      ]
+    }
+  ]
+}

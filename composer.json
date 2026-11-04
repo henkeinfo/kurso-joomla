@@ -1,0 +1,29 @@
+{
+    "name": "kurso/kurso-joomla",
+    "description": "KURSO for Joomla \u2013 display course data from the KURSO course management system",
+    "homepage": "https://www.kurso.de",
+    "license": "MIT",
+    "type": "project",
+    "support": {
+        "source": "https://github.com/henkeinfo/kurso-joomla"
+    },
+    "require": {
+        "php": ">=8.1",
+        "twig/twig": "^3.30"
+    },
+    "replace": {
+        "symfony/deprecation-contracts": "*",
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-mbstring": "*"
+    },
+    "config": {
+        "vendor-dir": "src/com_kurso/administrator/vendor",
+        "optimize-autoloader": true,
+        "classmap-authoritative": true,
+        "platform": {
+            "php": "8.1.0"
+        },
+        "sort-packages": true,
+        "platform-check": false
+    }
+}

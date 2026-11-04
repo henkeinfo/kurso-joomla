@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form addfieldprefix="Kurso\Component\Kurso\Administrator\Field">
+	<fieldset name="details">
+		<field
+			name="id"
+			type="number"
+			label="JGLOBAL_FIELD_ID_LABEL"
+			default="0"
+			class="readonly"
+			readonly="true"
+		/>
+
+		<field
+			name="title"
+			type="text"
+			label="JGLOBAL_TITLE"
+			required="true"
+			maxlength="255"
+		/>
+
+		<field
+			name="alias"
+			type="text"
+			label="COM_KURSO_FIELD_ALIAS_LABEL"
+			description="COM_KURSO_FIELD_ALIAS_DESC"
+			hint="JFIELD_ALIAS_PLACEHOLDER"
+			maxlength="191"
+		/>
+
+		<field
+			name="graphql"
+			type="editor"
+			label="COM_KURSO_FIELD_GRAPHQL_LABEL"
+			description="COM_KURSO_FIELD_GRAPHQL_DESC"
+			editor="codemirror|none"
+			syntax="kursographql"
+			buttons="false"
+			height="360px"
+			filter="raw"
+			required="true"
+		/>
+
+		<field
+			name="variables"
+			type="editor"
+			label="COM_KURSO_FIELD_VARIABLES_LABEL"
+			description="COM_KURSO_FIELD_VARIABLES_DESC"
+			editor="codemirror|none"
+			syntax="json"
+			buttons="false"
+			height="140px"
+			filter="raw"
+		/>
+
+		<field
+			name="template"
+			type="editor"
+			label="COM_KURSO_FIELD_TEMPLATE_LABEL"
+			description="COM_KURSO_FIELD_TEMPLATE_DESC"
+			editor="codemirror|none"
+			syntax="kursotwig"
+			buttons="false"
+			height="480px"
+			filter="raw"
+		/>
+	</fieldset>
+
+	<fieldset name="settings">
+		<field
+			name="state"
+			type="list"
+			label="JSTATUS"
+			class="form-select-color-state"
+			default="1"
+			validate="options"
+			>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+
+		<field
+			name="refresh_interval"
+			type="number"
+			label="COM_KURSO_FIELD_INTERVAL_LABEL"
+			description="COM_KURSO_FIELD_INTERVAL_DESC"
+			default="60"
+			min="1"
+			max="10080"
+			step="1"
+			filter="integer"
+			validate="number"
+			required="true"
+		/>
+
+		<field
+			name="note"
+			type="text"
+			label="COM_KURSO_FIELD_NOTE_LABEL"
+			maxlength="255"
+		/>
+
+		<field
+			name="checked_out"
+			type="hidden"
+			filter="unset"
+		/>
+
+		<field
+			name="checked_out_time"
+			type="hidden"
+			filter="unset"
+		/>
+	</fieldset>
+</form>

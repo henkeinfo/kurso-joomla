@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="connection">
+		<field
+			name="graphql_url"
+			type="url"
+			label="COM_KURSO_CONNECTION_URL_LABEL"
+			description="COM_KURSO_CONNECTION_URL_DESC"
+			hint="https://mein-system.kurso.de/api/graphql"
+			schemes="https,http"
+			validate="url"
+			filter="url"
+			required="true"
+			maxlength="2000"
+		/>
+
+		<field
+			name="username"
+			type="text"
+			label="COM_KURSO_CONNECTION_USERNAME_LABEL"
+			required="true"
+			autocomplete="off"
+			maxlength="255"
+		/>
+
+		<field
+			name="password"
+			type="password"
+			label="COM_KURSO_CONNECTION_PASSWORD_LABEL"
+			description="COM_KURSO_CONNECTION_PASSWORD_DESC"
+			autocomplete="new-password"
+			filter="raw"
+			maxlength="1000"
+		/>
+	</fieldset>
+</form>

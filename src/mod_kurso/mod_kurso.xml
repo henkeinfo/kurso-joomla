@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_kurso</name>
+	<author>KURSO</author>
+	<creationDate>2026-11</creationDate>
+	<copyright>(C) 2026 KURSO</copyright>
+	<license>MIT; see LICENSE</license>
+	<authorUrl>https://www.kurso.de</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_KURSO_XML_DESCRIPTION</description>
+	<namespace path="src">Kurso\Module\Kurso</namespace>
+	<files>
+		<folder module="mod_kurso">services</folder>
+		<folder>language</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldprefix="Kurso\Component\Kurso\Administrator\Field">
+				<field
+					name="query_id"
+					type="kursoquery"
+					label="MOD_KURSO_FIELD_QUERY_LABEL"
+					description="MOD_KURSO_FIELD_QUERY_DESC"
+					required="true"
+					>
+					<option value="">MOD_KURSO_FIELD_QUERY_PLACEHOLDER</option>
+				</field>
+
+				<field
+					name="css_class"
+					type="text"
+					label="MOD_KURSO_FIELD_CSS_CLASS_LABEL"
+					description="MOD_KURSO_FIELD_CSS_CLASS_DESC"
+				/>
+
+				<field
+					name="template_override"
+					type="editor"
+					label="MOD_KURSO_FIELD_TEMPLATE_LABEL"
+					description="MOD_KURSO_FIELD_TEMPLATE_DESC"
+					editor="codemirror|none"
+					syntax="html"
+					buttons="false"
+					height="300px"
+					filter="raw"
+				/>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					default="0"
+					filter="integer"
+					validate="options"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					default="900"
+					filter="integer"
+				/>
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static"
+					>
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

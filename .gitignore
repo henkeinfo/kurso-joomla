@@ -1,0 +1,19 @@
+# Composer dependencies (installed by bin/build.sh)
+/src/com_kurso/administrator/vendor/
+/composer.phar
+
+# Build output
+/dist/
+*.zip
+
+# IDE & editor
+.idea/
+.vscode/
+.claude/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+	<layout title="COM_KURSO_QUERY_VIEW_DEFAULT_TITLE">
+		<message>
+			<![CDATA[COM_KURSO_QUERY_VIEW_DEFAULT_DESC]]>
+		</message>
+	</layout>
+
+	<fields name="request">
+		<fieldset name="request" addfieldprefix="Kurso\Component\Kurso\Administrator\Field">
+			<field
+				name="id"
+				type="kursoquery"
+				label="COM_KURSO_FIELD_SELECT_QUERY_LABEL"
+				required="true"
+				>
+				<option value="">COM_KURSO_FIELD_SELECT_QUERY_PLACEHOLDER</option>
+			</field>
+		</fieldset>
+	</fields>
+
+	<fields name="params">
+		<fieldset name="basic" label="COM_KURSO_FIELDSET_DISPLAY">
+			<field
+				name="css_class"
+				type="text"
+				label="COM_KURSO_FIELD_CSS_CLASS_LABEL"
+				description="COM_KURSO_FIELD_CSS_CLASS_DESC"
+			/>
+		</fieldset>
+	</fields>
+</metadata>

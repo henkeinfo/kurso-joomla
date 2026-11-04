@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Joomla update server for KURSO for Joomla.
+    Joomla reads this file (see <updateservers> in src/pkg_kurso/pkg_kurso.xml) to offer updates in
+    System » Update » Extensions. Add a new <update> block for every release (see CLAUDE.md).
+-->
+<updates>
+	<update>
+		<name>KURSO for Joomla</name>
+		<description>KURSO for Joomla</description>
+		<element>pkg_kurso</element>
+		<type>package</type>
+		<version>1.0.0</version>
+		<client>site</client>
+		<infourl title="KURSO for Joomla">https://github.com/henkeinfo/kurso-joomla/releases/tag/v1.0.0</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/henkeinfo/kurso-joomla/releases/download/v1.0.0/pkg_kurso-1.0.0.zip</downloadurl>
+		</downloads>
+		<maintainer>KURSO</maintainer>
+		<maintainerurl>https://www.kurso.de</maintainerurl>
+		<targetplatform name="joomla" version="(5\.[4-9]|6\.[0-9])" />
+		<php_minimum>8.1</php_minimum>
+	</update>
+</updates>

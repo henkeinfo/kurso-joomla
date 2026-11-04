@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="editors-xtd" method="upgrade">
+	<name>plg_editors-xtd_kurso</name>
+	<author>KURSO</author>
+	<creationDate>2026-11</creationDate>
+	<copyright>(C) 2026 KURSO</copyright>
+	<license>MIT; see LICENSE</license>
+	<authorUrl>https://www.kurso.de</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_EDITORS-XTD_KURSO_XML_DESCRIPTION</description>
+	<namespace path="src">Kurso\Plugin\EditorsXtd\Kurso</namespace>
+	<files>
+		<folder plugin="kurso">services</folder>
+		<folder>language</folder>
+		<folder>src</folder>
+	</files>
+</extension>

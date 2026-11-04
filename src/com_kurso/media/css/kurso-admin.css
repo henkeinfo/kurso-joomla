@@ -1,0 +1,28 @@
+/* KURSO for Joomla – administrator styles */
+.kurso-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: -.5rem 0 1.25rem; }
+.kurso-status { color: var(--body-color, #555); font-size: .875rem; }
+.kurso-status.is-busy::before { content: ""; display: inline-block; width: .9em; height: .9em; margin-right: .4em; vertical-align: -.1em; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: kurso-spin .8s linear infinite; }
+@keyframes kurso-spin { to { transform: rotate(360deg); } }
+
+.kurso-result { background: var(--template-bg-light, #f8f9fa); border: 1px solid var(--border-color, #dee2e6); border-radius: .25rem; font-size: .8125rem; line-height: 1.5; max-height: 220px; overflow: auto; padding: .75rem 1rem; white-space: pre; }
+.kurso-result--error { background: #fdf0f0; border-color: #c52827; color: #c52827; white-space: pre-wrap; }
+.kurso-result--data { max-height: 560px; min-height: 120px; }
+
+.kurso-preview-frame { background: #fff; border: 1px solid var(--border-color, #dee2e6); border-radius: .25rem; display: block; height: 560px; resize: vertical; width: 100%; }
+
+.kurso-embed { align-items: center; display: flex; flex-wrap: wrap; gap: .5rem; }
+.kurso-embed__tag { background: var(--template-bg-light, #f8f9fa); border-radius: .25rem; padding: .25rem .5rem; white-space: nowrap; }
+.kurso-copy.is-copied { border-color: var(--success, #2f7d32); color: var(--success, #2f7d32); }
+
+.kurso-info { margin-bottom: 1rem; }
+.kurso-info h3 { margin-top: 0; }
+.kurso-cheatsheet dt { font-weight: normal; margin-top: .5rem; }
+.kurso-cheatsheet dt code { white-space: normal; word-break: break-word; }
+.kurso-cheatsheet dd { margin-bottom: 0; color: var(--body-color, #555); }
+
+.kurso-fetch-error { max-width: 28rem; }
+.kurso-select code { white-space: nowrap; }
+.kurso-info .kurso-embed__tag { white-space: normal; word-break: break-all; }
+.kurso-row-actions .btn { display: block; margin: 0 0 .25rem; text-align: start; white-space: nowrap; width: 100%; }
+.kurso-row-actions .btn.is-busy { cursor: progress; pointer-events: none; }
+.kurso-row-actions .btn.is-busy [class^="icon-"] { animation: kurso-spin .8s linear infinite; display: inline-block; }
